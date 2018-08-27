@@ -1,0 +1,243 @@
+/* ------------------------ */
+/* GENERAL SETUP */
+/* ------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: 'Inconsolata', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h1 {
+  margin-top: 0px;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 96px;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 18px;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+
+/* ------------------------ */
+/* REUSABLE COMPONENTS */
+/* ------------------------ */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 16px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-about-us {
+}
+
+.section-cards {
+  background-color: rgb(226, 226, 226);
+}
+
+/* ------------------------ */
+/* HEADER */
+/* ------------------------ */
+.header-content {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(img/restaurant-2.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+  height: 48px;
+}
+
+.slogan {
+  color: #fff;
+  font-size: 28px;
+}
+
+header nav {
+  position: fixed;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 0;
+  z-index: 999;
+}
+
+.navigation {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav {
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+
+.main-nav ul {
+  list-style: none;
+}
+
+.main-nav li {
+  display: inline-block;
+}
+
+.main-nav a:link,
+.main-nav a:visited {
+  text-decoration: none;
+  color: #555;
+  display: block;
+  background-color: #fff;
+  border: 2px solid #fff;
+  padding: 8px 16px;
+  transition: all ease 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a:active {
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/* ------------------------ */
+/* GRID */
+/* ------------------------ */
+.columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  flex: 1;
+  margin-right: 16px;
+  padding: 16px;
+}
+
+.column:last-child {
+  margin-right: 0px;
+}
+
+/* ------------------------ */
+/* CARD */
+/* ------------------------ */
+.card {
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 24px;
+  transition: all ease 0.3s;
+  background-color: #fff;
+}
+
+.card:hover {
+  box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
+
+/* ------------------------ */
+/* BUTTON */
+/* ------------------------ */
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 200px;
+  color: #fff;
+  text-transform: uppercase;
+  transition: all ease 0.3s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+  background-color: #ff654a;
+  border: 1px solid #ff654a;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+  background-color: transparent;
+  border: 1px solid #ff654a;
+  color: #ff654a;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #df553d;
+}
+
+.btn-full:hover,
+.btn-full:active {
+  border: 1px solid #df553d;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+  color: #fff;
+  border: 1px solid #df553d;
+}
+
+/* ------------------------ */
+/* MEDIA QUERIES */
+/* ------------------------ */
+
+@media screen and (max-width: 480px) {
+  .columns {
+    flex-direction: column;
+  }
+  .column {
+    margin-right: 0px;
+  }
+}

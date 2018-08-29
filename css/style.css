@@ -34,9 +34,6 @@
     transform: translate(0);
   }
 }
-/* ------------------------ */
-/* GENERAL SETUP */
-/* ------------------------ */
 *,
 *::before,
 *::after {
@@ -60,32 +57,86 @@ body {
   background-color: #fff;
   text-rendering: optimizeLegibility;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 400;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 1.6rem;
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
 }
-h1 {
-  font-size: 9.6rem;
+.align-center {
+  align-items: center;
+}
+.heading-primary {
   color: #fff;
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
+  text-transform: uppercase;
+  backface-visibility: hidden;
 }
-h3 {
-  margin-bottom: 1.2rem;
-  font-size: 1.8rem;
+.heading-primary--main {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 9rem;
+  font-weight: 400;
+  letter-spacing: 1rem;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5rem;
+  animation: moveInRight 1s ease-out;
+  text-align: center;
+}
+.heading-secondary {
+  margin-bottom: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
 }
-p {
-  font-size: 1.8rem;
-  line-height: 1.2;
-  margin-bottom: 2rem;
+.heading-secondary:after {
+  content: '';
+  display: block;
+  height: 0.2rem;
+  width: 100px;
+  background-color: #eb2f64;
+  margin: 0 auto;
+  margin-top: 1.5rem;
 }
-/* ------------------------ */
-/* GRID */
-/* ------------------------ */
+.heading-tertiary {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.paragraph {
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+.paragraph:not(:last-child) {
+  margin-bottom: 3rem;
+}
+.center-text {
+  text-align: center !important;
+}
+.margin-bottom-small {
+  margin-bottom: 1.5rem !important;
+}
+.margin-bottom-medium {
+  margin-bottom: 4rem !important;
+}
+.margin-bottom-big {
+  margin-bottom: 8rem !important;
+}
+.margin-top-big {
+  margin-top: 8rem !important;
+}
+.margin-top-huge {
+  margin-top: 10rem !important;
+}
 .columns {
   display: flex;
   justify-content: space-between;
@@ -108,9 +159,6 @@ p {
 .column:last-child {
   margin-right: 0rem;
 }
-/* ------------------------ */
-/* CARD */
-/* ------------------------ */
 .card {
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
   border-radius: 0.4rem;
@@ -122,9 +170,6 @@ p {
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   transform: scale(1.02);
 }
-/* ------------------------ */
-/* LINK */
-/* ------------------------ */
 a:link,
 a:visited {
   color: #eb2f64;
@@ -138,9 +183,6 @@ a:active {
   color: #555;
   border-bottom: 0.1rem solid transparent;
 }
-/* ------------------------ */
-/* BUTTON */
-/* ------------------------ */
 .btn {
   display: inline-block;
   padding: 1.6rem 3rem;
@@ -190,34 +232,42 @@ a:active {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
-/* ------------------------ */
-/* COMPONENTS */
-/* ------------------------ */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 1.6rem;
-  width: 100%;
-  max-width: 120rem;
-  margin: 0 auto;
-}
-.align-center {
-  align-items: center;
-}
 .section {
-  padding: 8rem 0;
+  padding: 6rem 0;
 }
-.section-cards {
+.section-about {
+  padding: 6rem 0;
+}
+.section-gallery {
+  padding: 6rem 0;
   background-color: #f9f7f6;
 }
-/* ------------------------ */
-/* HEADER */
-/* ------------------------ */
-.header-content {
+.section-testimonials {
+  padding: 6rem 0;
+}
+.section-reservation {
+  padding: 6rem 0;
+  background-color: #f9f7f6;
+}
+.section-map {
+  padding: 6rem 0;
+}
+.footer {
+  padding: 6rem 0;
+  background-color: #333;
+  color: #fff;
+}
+.footer__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/restaurant-2.jpg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   height: 75vh;
   display: flex;
   flex-direction: column;
@@ -228,36 +278,39 @@ a:active {
   display: block;
   height: 4.8rem;
 }
-.slogan {
-  color: #fff;
-  font-size: 2.8rem;
-}
-header nav {
-  position: fixed;
-  width: 100%;
-  margin: 1rem 0;
-  padding: 1rem 0;
-  z-index: 999;
-}
 .navigation {
   position: fixed;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 999;
+  transition: background-color ease 0.3s;
+}
+.navigation-fixed {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.navigation-box {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  padding: 0 1.6rem;
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
   align-items: center;
 }
-.main-nav {
+.navigation__nav {
   padding-bottom: 1.6rem;
   padding-top: 1.6rem;
 }
-.main-nav ul {
+.navigation__list {
   list-style: none;
 }
-.main-nav li {
+.navigation__item {
   display: inline-block;
   font-size: 1.6rem;
 }
-.main-nav a:link,
-.main-nav a:visited {
+.navigation__link:link,
+.navigation__link:visited {
   text-decoration: none;
   color: #555;
   display: block;
@@ -266,8 +319,8 @@ header nav {
   padding: 0.8rem 1.6rem;
   transition: all ease 0.2s;
 }
-.main-nav a:hover,
-.main-nav a:active {
+.navigation__link:hover,
+.navigation__link:active {
   text-decoration: none;
   background-color: transparent;
   border: 0.2rem solid #fff;

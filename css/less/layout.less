@@ -1,42 +1,52 @@
 // main: ./main.less
 
-/* ------------------------ */
-/* COMPONENTS */
-/* ------------------------ */
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 1.6rem;
-  width: 100%;
-  max-width: @content-width;
-  margin: 0 auto;
-}
-
-.align-center {
-  align-items: center;
-}
-
 .section {
-  padding: 8rem 0;
+  padding: 6rem 0;
 }
 
-.section-about-us {
+.section-about {
+  .section;
 }
 
-.section-cards {
+.section-gallery {
+  .section;
   background-color: @color-grey-light-1;
 }
 
-/* ------------------------ */
-/* HEADER */
-/* ------------------------ */
-.header-content {
+.section-testimonials {
+  .section;
+}
+
+.section-reservation {
+  .section;
+  background-color: @color-grey-light-1;
+}
+
+.section-map {
+  .section;
+}
+
+.footer {
+  .section;
+  background-color: @color-grey-dark-3;
+  color: @color-white;
+}
+
+.footer__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+////////////////////////////////////////
+// HEADER
+.header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(img/restaurant-2.jpg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   height: 75vh;
   display: flex;
   flex-direction: column;
@@ -49,42 +59,47 @@
   height: 4.8rem;
 }
 
-.slogan {
-  color: @color-white;
-  font-size: 2.8rem;
-}
-
-header nav {
-  position: fixed;
-  width: 100%;
-  margin: 1rem 0;
-  padding: 1rem 0;
-  z-index: 999;
-}
-
+////////////////////////////////////////
+// NAVIGATION
 .navigation {
   position: fixed;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 999;
+  transition: background-color ease 0.3s;
+}
+
+.navigation-fixed {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navigation-box {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  padding: 0 1.6rem;
+  width: 100%;
+  max-width: @content-width;
+  margin: 0 auto;
   align-items: center;
 }
 
-.main-nav {
+.navigation__nav {
   padding-bottom: 1.6rem;
   padding-top: 1.6rem;
 }
 
-.main-nav ul {
+.navigation__list {
   list-style: none;
 }
 
-.main-nav li {
+.navigation__item {
   display: inline-block;
   font-size: @default-font-size;
 }
 
-.main-nav a:link,
-.main-nav a:visited {
+.navigation__link:link,
+.navigation__link:visited {
   text-decoration: none;
   color: @color-grey-dark-2;
   display: block;
@@ -94,8 +109,8 @@ header nav {
   transition: all ease 0.2s;
 }
 
-.main-nav a:hover,
-.main-nav a:active {
+.navigation__link:hover,
+.navigation__link:active {
   text-decoration: none;
   background-color: transparent;
   border: 0.2rem solid @color-white;

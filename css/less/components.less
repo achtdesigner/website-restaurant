@@ -1,8 +1,102 @@
 // main: ./main.less
 
-/* ------------------------ */
-/* GRID */
-/* ------------------------ */
+////////////////////////////////////////
+// REUSABLE ELEMENTS
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 1.6rem;
+  width: 100%;
+  max-width: @content-width;
+  margin: 0 auto;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.heading-primary {
+  color: @color-white;
+  margin-bottom: 6rem;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  &--main {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 9rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    animation: moveInRight 1s ease-out;
+    text-align: center;
+  }
+}
+
+.heading-secondary {
+  margin-bottom: 3rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  &:after {
+    content: '';
+    display: block;
+    height: 0.2rem;
+    width: 100px;
+    background-color: @color-primary;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+  }
+}
+
+.heading-tertiary {
+  margin-bottom: 1rem;
+  font-size: @default-font-size;
+  font-weight: 700;
+}
+
+.paragraph {
+  font-size: @default-font-size;
+  line-height: 1.2;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+////////////////////////////////////////
+// UTILITIES
+.center-text {
+  text-align: center !important;
+}
+
+.margin-bottom-small {
+  margin-bottom: 1.5rem !important;
+}
+.margin-bottom-medium {
+  margin-bottom: 4rem !important;
+}
+
+.margin-bottom-big {
+  margin-bottom: 8rem !important;
+}
+
+.margin-top-big {
+  margin-top: 8rem !important;
+}
+.margin-top-huge {
+  margin-top: 10rem !important;
+}
+
+////////////////////////////////////////
+// GRID
 .columns {
   display: flex;
   justify-content: space-between;
@@ -24,9 +118,8 @@
   margin-right: 0rem;
 }
 
-/* ------------------------ */
-/* CARD */
-/* ------------------------ */
+////////////////////////////////////////
+// CARD
 .card {
   box-shadow: @shadow-light;
   border-radius: 0.4rem;
@@ -40,9 +133,8 @@
   transform: scale(1.02);
 }
 
-/* ------------------------ */
-/* LINK */
-/* ------------------------ */
+////////////////////////////////////////
+// LINK
 a {
   &:link,
   &:visited {
@@ -59,9 +151,8 @@ a {
   }
 }
 
-/* ------------------------ */
-/* BUTTON */
-/* ------------------------ */
+////////////////////////////////////////
+// BUTTON
 .btn {
   display: inline-block;
   padding: 1.6rem 3rem;

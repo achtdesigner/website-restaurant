@@ -98,6 +98,7 @@
 ////////////////////////////////////////
 // GRID
 .columns {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   @media only screen and (max-width: @bp-small) {
@@ -126,11 +127,10 @@
   padding: 2.4rem;
   transition: all ease 0.3s;
   background-color: #fff;
-}
-
-.card:hover {
-  box-shadow: @shadow-dark;
-  transform: scale(1.02);
+  &:hover {
+    box-shadow: @shadow-dark;
+    transform: scale(1.02);
+  }
 }
 
 ////////////////////////////////////////
